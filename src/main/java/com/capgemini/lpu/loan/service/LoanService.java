@@ -12,7 +12,7 @@ import com.capgemini.lpu.loan.exceptions.RequestIdFormateException;
 
 public interface LoanService {
 
-	String addLoanRequest(LoanRequest loanReqObj) throws AccountIdFormateException, LoanAmountException, LoanRequestObjectException;
+	String addLoanRequest(LoanRequest loanReqObj) throws AccountIdFormateException, LoanAmountException, LoanRequestObjectException, RequestIdFormateException;
 	Map<String, LoanRequest> viewRequests();
 	LoanRequest viewRequests(String reqid) throws RequestIdFormateException,RequestIdException, LoanRequestObjectException;
 	String approveLoan(String reqid) throws RequestIdFormateException, RequestIdException, AccountIdException, LoanRequestObjectException;

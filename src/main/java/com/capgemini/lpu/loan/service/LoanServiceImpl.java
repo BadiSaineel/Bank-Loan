@@ -20,11 +20,14 @@ public class LoanServiceImpl implements LoanService{
 	
 
 	LoanDao ld=new LoanDaoImpl();
-	public String addLoanRequest(LoanRequest loanReqObj) throws AccountIdFormateException, LoanAmountException, LoanRequestObjectException {
+	public String addLoanRequest(LoanRequest loanReqObj) throws AccountIdFormateException, LoanAmountException, LoanRequestObjectException, RequestIdFormateException {
 		
 		if(loanReqObj==null) {
 			throw new LoanRequestObjectException();
 		}
+		
+		if(!loanReqObj.getLoanRequestId().matches("[l][i][d][0-9]{6}"))
+			throw new RequestIdFormateException();
 		
 		if(!loanReqObj.getloanAccountId().matches("[1-9][0-9]{11}"))
 			throw new AccountIdFormateException();
@@ -46,14 +49,16 @@ public class LoanServiceImpl implements LoanService{
 	public LoanRequest viewRequests(String reqid) throws RequestIdFormateException,RequestIdException, LoanRequestObjectException {
 		if(reqid==null)
 			throw new LoanRequestObjectException();
-		if(!reqid.matches("[l][i][d][0-9]{8}"))
+		if(!reqid.matches("[l][i][d][0-9]{6}"))
 			throw new RequestIdFormateException();
 		return ld.daoViewRequests(reqid);
 	}
 	public String approveLoan(String reqid) throws RequestIdFormateException, RequestIdException, AccountIdException, LoanRequestObjectException {
+		
 		LoanRequest req=viewRequests(reqid);
+		if(!ld.checkAccountId(req.getloanAccountId()))
+			throw new AccountIdException();
 		if(req.getCreditScore()>700) {
-			req=viewRequests(reqid);
 			req.setLoanStatus("APPROVED");
 			ld.daoApproveLoan(req);
 			AccountManagement acc=ld.getAccount(req.getloanAccountId());

@@ -88,8 +88,11 @@ public class LoanRepository {
 		txnlist.add(tran4);
 		
 		LoanRequest loanreq1=new LoanRequest("lid756551", "100000123456", 200000.0, "Property", 24, 2.5, "REQUESTED", 10000.0, 850);
-		
+		LoanRequest loanreq2=new LoanRequest("lid756553", "100040123456", 200000.0, "Property", 24, 2.5, "REQUESTED", 10000.0, 850);
+		LoanRequest loanreq3=new LoanRequest("lid756554", "100000989565", 200000.0, "Property", 24, 2.5, "REQUESTED", 10000.0, 650);
 		loanreqmap.put(loanreq1.getLoanRequestId(), loanreq1);
+		loanreqmap.put(loanreq2.getLoanRequestId(), loanreq2);
+		loanreqmap.put(loanreq3.getLoanRequestId(), loanreq3);
 		
 	}
 }     

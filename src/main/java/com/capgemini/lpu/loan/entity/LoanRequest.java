@@ -55,6 +55,11 @@ public class LoanRequest {
 	public void setLoanStatus(String loanStatus) {
 		this.loanStatus = loanStatus;
 	}
+	@Override
+	public String toString() {
+		return "Order ID : "+loanRequestId+" Loan Account ID : "+loanAccountId+" Loan Amount : "+loanAmount+" Loan Status : "+loanStatus;
+	}
+	
 	
 	
 }

@@ -4,12 +4,13 @@ import com.capgemini.lpu.loan.entity.LoanRequest;
 import com.capgemini.lpu.loan.exceptions.AccountIdFormateException;
 import com.capgemini.lpu.loan.exceptions.LoanAmountException;
 import com.capgemini.lpu.loan.exceptions.LoanRequestObjectException;
+import com.capgemini.lpu.loan.exceptions.RequestIdFormateException;
 import com.capgemini.lpu.loan.service.LoanService;
 import com.capgemini.lpu.loan.service.LoanServiceImpl;
 
 public class LoanUI {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws RequestIdFormateException {
 	
 		LoanService ser=new LoanServiceImpl();
 		try {
