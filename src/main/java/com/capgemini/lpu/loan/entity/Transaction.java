@@ -4,7 +4,7 @@ import java.time.LocalDate;
 /**
  * 
  * @author : Sai Neel
- * @Description : This is an entity class which contains Transaction details.
+ * @Description : This is an entity class which contains Transaction details which helps to know.
  */
 public class Transaction {
 
