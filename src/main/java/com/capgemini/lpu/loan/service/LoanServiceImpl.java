@@ -17,7 +17,9 @@ import com.capgemini.lpu.loan.exceptions.RequestIdFormateException;
 
 public class LoanServiceImpl implements LoanService{
 	
-	
+	public static final int range=700;
+	public static final double min=5000.0;
+	public static final double max=1000000.0;
 
 	LoanDao ld=new LoanDaoImpl();
 	public String addLoanRequest(LoanRequest loanReqObj) throws AccountIdFormateException, LoanAmountException, LoanRequestObjectException, RequestIdFormateException {
@@ -32,7 +34,7 @@ public class LoanServiceImpl implements LoanService{
 		if(!loanReqObj.getloanAccountId().matches("[1-9][0-9]{11}"))
 			throw new AccountIdFormateException();
 		
-		if((loanReqObj.getLoanAmount()<5000.0) || (loanReqObj.getLoanAmount()>1000000.0)) {
+		if((loanReqObj.getLoanAmount()<min) || (loanReqObj.getLoanAmount()>max)) {
 			throw new LoanAmountException();
 		}
 		
@@ -58,7 +60,7 @@ public class LoanServiceImpl implements LoanService{
 		LoanRequest req=viewRequests(reqid);
 		if(!ld.checkAccountId(req.getloanAccountId()))
 			throw new AccountIdException();
-		if(req.getCreditScore()>700) {
+		if(req.getCreditScore()>range) {
 			req.setLoanStatus("APPROVED");
 			ld.daoApproveLoan(req);
 			AccountManagement acc=ld.getAccount(req.getloanAccountId());
