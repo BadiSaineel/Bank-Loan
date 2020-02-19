@@ -1,7 +1,11 @@
 package com.capgemini.lpu.loan.entity;
 
 import java.util.Date;
-
+/**
+ * 
+ * @author : Sai Neel
+ * @Description : This is an entity class which contains Loan details.
+ */
 public class LoanDisbursed {
 
 	private String loanRequestId;

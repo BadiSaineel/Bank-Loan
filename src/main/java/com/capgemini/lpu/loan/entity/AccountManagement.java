@@ -1,7 +1,11 @@
 package com.capgemini.lpu.loan.entity;
 
 import java.time.LocalDate;
-
+/**
+ * 
+ * @author : Sai Neel
+ * @Description : This is an entity class which contains account details and customer object.
+ */
 public class AccountManagement {
 
 	private String accountId;

@@ -1,5 +1,9 @@
 package com.capgemini.lpu.loan.exceptions;
-
+/**
+ * 
+ * @author : Sai Neel 
+ * @Description : This is an exception class for Loan Amount.
+ */
 public class LoanAmountException extends Exception{
 
 	@Override

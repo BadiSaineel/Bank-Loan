@@ -1,5 +1,9 @@
 package com.capgemini.lpu.loan.entity;
-
+/**
+ * 
+ * @author : Sai Neel
+ * @Description : This is an entity class which contains Loan Request details.
+ */
 public class LoanRequest {
 
 	private String loanRequestId;

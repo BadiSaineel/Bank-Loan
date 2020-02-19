@@ -1,5 +1,9 @@
 package com.capgemini.lpu.loan.entity;
-
+/**
+ * 
+ * @author : Sai Neel
+ * @Description : This is an entity class which contains Address details and Branch object.
+ */
 public class Address {
 
 	private String addressId;
