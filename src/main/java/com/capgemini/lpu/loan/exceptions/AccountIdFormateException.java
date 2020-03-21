@@ -9,7 +9,7 @@ public class AccountIdFormateException extends Exception{
 	@Override
 	public String toString() {
 		
-		return "Entered Account ID should contain atleast 12 numbers";
+		return "Entered Account ID must be 12 digit number";
 	}
 	
 
